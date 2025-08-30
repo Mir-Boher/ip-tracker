@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "Josefin Sans", serif;
+}
+
+.header {
+  background-image: url("../images/pattern-bg-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 1rem 8rem;
+  text-align: center;
+  height: 250px;
+  position: relative;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.search-container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px 0 0 12px;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-button {
+  background: #000;
+  color: white;
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background: #333;
+}
+
+.info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 1000px;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: left;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  bottom: -52px;
+  z-index: 2;
+}
+
+.info-section {
+  position: relative;
+}
+
+.info-section:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -1rem;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: #ddd;
+}
+
+.info-label {
+  color: #666;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.7rem;
+}
+
+.info-value {
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+#map {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .header {
+    background-image: url("../images/pattern-bg-desktop.png");
+    padding: 2rem 1.5rem 8rem;
+  }
+
+  .info-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+    bottom: -250px;
+  }
+
+  .info-section:not(:last-child)::after {
+    display: none;
+  }
+
+  .info-section:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  #map {
+    height: 100vh;
+  }
+}
